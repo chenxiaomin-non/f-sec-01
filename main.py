@@ -16,6 +16,7 @@ def ceasar(cipher: str, key: int):
     return result
 
 st.title("Tool for today!")
+st.header("1. Ceasar Cipher:")
 st.write("Enter ciphertext you want to decrypt or plaintext you want to encrypt:")
 
 cipher = st.text_input("Ciphertext/Plaintext: ")
@@ -23,4 +24,28 @@ key = st.slider("Key: ", 0, 25, 0)
 
 if st.button("Decrypt/Encrypt"):
     plaintext = ceasar(cipher.upper(), key)
+    st.write("Your ciphertext/plaintext is: " + plaintext)
+
+    
+ def vigenere(cipher: str, key: str):
+    char_A = ord('A')
+    result = ""
+    for i in range(len(cipher)):
+        if cipher[i].isalpha() is False:
+            result += cipher[i]
+            continue
+        value = cipher[i] - char_A
+        mini_key = key[i%len(key)] - char_A
+        value = (value + mini_key) % 26 + char_A
+        result += chr(value)
+    return result
+ 
+st.header("2. Vigenere Cipher")
+st.write("Enter ciphertext you want to decrypt or plaintext you want to encrypt:")
+
+cipher_v = st.text_input("Ciphertext/Plaintext: ")
+key_v = st.text_input("Key: ")
+
+if st.button("Decrypt/Encrypt"):
+    plaintext = vigenere(cipher_v.upper(), key_v.upper())
     st.write("Your ciphertext/plaintext is: " + plaintext)
