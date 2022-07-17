@@ -3,11 +3,21 @@ import streamlit as st
 def ceasar(cipher: str, key: int):
     char_A = ord('A')
     list_cipher = []
+    
+    st.write("")
+    st.write("Starting to encrypt/decrypt...")
+    st.write("")
+             
     for i in cipher:
         if i.isalpha() is False:
+            st.write(i + " -> " + i)
+            sleep(2)
             list_cipher.append(i)
             continue
+        
+        
         value = (ord(i) - char_A + key) % 26 + char_A
+        st.write(i + " + " + str(key) + " -> " + chr(value))
         list_cipher.append(chr(value))
     result = ""
     for i in list_cipher:
