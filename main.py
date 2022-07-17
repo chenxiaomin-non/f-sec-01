@@ -43,9 +43,9 @@ def vigenere(cipher: str, key: str):
 st.header("2. Vigenere Cipher")
 st.write("Enter ciphertext you want to decrypt or plaintext you want to encrypt:")
 
-cipher_v = st.text_input("Ciphertext/Plaintext: ")
-key_v = st.text_input("Key: ")
+cipher_v = st.text_input("Vigenere Ciphertext/Plaintext: ")
+key_v = st.text_input("Vigenere Key: ")
 
-if st.button("Decrypt/Encrypt"):
+if st.button(" Decrypt/Encrypt "):
     plaintext = vigenere(cipher_v.upper(), key_v.upper())
     st.write("Your ciphertext/plaintext is: " + plaintext)
