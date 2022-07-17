@@ -9,12 +9,11 @@ def ceasar(cipher: str, key: int):
         time.sleep(1)
              
     for i in cipher:
+        
         if i.isalpha() is False:
-            st.write(i + " -> " + i):
-       
+            st.write(i + " -> " + i)
             list_cipher.append(i)
             continue
-        
         
         value = (ord(i) - char_A + key) % 26 + char_A
         st.write(i + " + " + str(key) + " -> " + chr(value))
