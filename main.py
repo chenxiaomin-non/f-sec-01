@@ -34,8 +34,8 @@ def vigenere(cipher: str, key: str):
         if cipher[i].isalpha() is False:
             result += cipher[i]
             continue
-        value = cipher[i] - char_A
-        mini_key = key[i%len(key)] - char_A
+        value = ord(cipher[i]) - char_A
+        mini_key = ord(key[i%len(key)]) - char_A
         value = (value + mini_key) % 26 + char_A
         result += chr(value)
     return result
