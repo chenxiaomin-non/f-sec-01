@@ -27,7 +27,7 @@ if st.button("Decrypt/Encrypt"):
     st.write("Your ciphertext/plaintext is: " + plaintext)
 
     
- def vigenere(cipher: str, key: str):
+def vigenere(cipher: str, key: str):
     char_A = ord('A')
     result = ""
     for i in range(len(cipher)):
