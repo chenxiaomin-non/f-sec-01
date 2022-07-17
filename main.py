@@ -5,21 +5,19 @@ def ceasar(cipher: str, key: int):
     char_A = ord('A')
     list_cipher = []
     
-    st.write("")
-    st.write("Starting to encrypt/decrypt...")
-    st.write("")
+    with st.spinner("\nStarting to encrypt/decrypt...\n"):
+        time.sleep(1)
              
     for i in cipher:
         if i.isalpha() is False:
-            with st.spinner(i + " -> " + i):
-                time.sleep(1)
+            st.write(i + " -> " + i):
+       
             list_cipher.append(i)
             continue
         
         
         value = (ord(i) - char_A + key) % 26 + char_A
-        with st.spinner(i + " + " + str(key) + " -> " + chr(value)):
-            time.sleep(1)
+        st.write(i + " + " + str(key) + " -> " + chr(value)):
         list_cipher.append(chr(value))
     result = ""
     for i in list_cipher:
