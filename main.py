@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 def ceasar(cipher: str, key: int):
     char_A = ord('A')
