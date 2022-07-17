@@ -10,14 +10,15 @@ def ceasar(cipher: str, key: int):
              
     for i in cipher:
         if i.isalpha() is False:
-            st.write(i + " -> " + i)
-            sleep(2)
+            with st.spinner(i + " -> " + i):
+                time.sleep(1)
             list_cipher.append(i)
             continue
         
         
         value = (ord(i) - char_A + key) % 26 + char_A
-        st.write(i + " + " + str(key) + " -> " + chr(value))
+        with st.spinner(i + " + " + str(key) + " -> " + chr(value)):
+            time.sleep(1)
         list_cipher.append(chr(value))
     result = ""
     for i in list_cipher:
