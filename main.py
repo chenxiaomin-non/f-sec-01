@@ -67,6 +67,12 @@ def goldbug(plaintext: str):
     result = ""
     freq = {}
     for char in plaintext:
+        if char == ' ':
+            result += char
+            continue
+        if char.isalpha() is False:
+            result += '.'
+            continue
         freq[char] = freq.get(char, 0) + 1
         index = ord(char) - ord('A')
         result += list_char[index]
