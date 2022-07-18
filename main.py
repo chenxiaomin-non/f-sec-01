@@ -58,3 +58,29 @@ key_v = st.text_input("Vigenere Key: ")
 if st.button(" Decrypt/Encrypt "):
     plaintext = vigenere(cipher_v.upper(), key_v.upper())
     st.write("Your ciphertext/plaintext is: " + plaintext)
+
+    
+def goldbug(plaintext: str):
+    list_char = ['!', '@', '#', 'a', 'b', '1', '&', '$', '%', '^', 
+                 '*', '(', ')', '-', '2', '3', '4', '_', '=', '+',
+                 ':', ';', '{', '}', '|', '\\', '>', '<']
+    result = ""
+    freq = {}
+    for char in plaintext:
+        freq[char] = freq.get(char, 0) + 1
+        index = ord(char) - ord('A')
+        result += list_char[index]
+    st.write("Analyze frequency of the text")
+    for k,v in freq.items():
+        st.write('Character: %s -> %s times' %(k, v,))
+    return result
+        
+st.header("3. Goldbug Cipher")
+st.write("Enter ciphertext you want to decrypt or plaintext you want to encrypt:")
+
+cipher_g = st.text_input("Goldbug C/P: ")
+
+if st.button("Goldbug!!!"):
+    cipher = goldbug(cipher_g.upper())
+    st.write("Your ciphertext is: " + cipher)
+    
