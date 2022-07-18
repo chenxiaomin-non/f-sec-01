@@ -82,5 +82,5 @@ cipher_g = st.text_input("Goldbug C/P: ")
 
 if st.button("Goldbug!!!"):
     cipher = goldbug(cipher_g.upper())
-    st.write("Your ciphertext is: " + cipher)
+    st.write("Your ciphertext is: \n\r\t" + cipher)
     
