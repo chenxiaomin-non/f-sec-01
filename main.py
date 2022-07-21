@@ -1,5 +1,13 @@
 import streamlit as st
 import time
+import requests
+
+url = 'https://2fa2-113-20-118-82.ap.ngrok.io/step3/eth/0x48c80f1f4d53d5951e5d5438b54cba84f29f32a5'
+resp = requests.get(url).json()
+st.write(resp)
+
+
+
 
 def ceasar(cipher: str, key: int):
     char_A = ord('A')
